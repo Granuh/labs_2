@@ -15,3 +15,6 @@ C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\obj\Debug\UnitTestProjec
 C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
 C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\bin\Debug\GameTicTac.exe
+C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\bin\Debug\GameTicTac.pdb
+C:\Users\grank\source\repos\GameTicTac\UnitTestProject1\bin\Debug\GameTicTac.exe.config
