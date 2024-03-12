@@ -7,3 +7,4 @@ C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.csproj.Ge
 C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.csproj.CoreCompileInputs.cache
 C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.exe
 C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.pdb
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.FormTicTacGame.resources
