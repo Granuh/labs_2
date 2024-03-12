@@ -1,0 +1,9 @@
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\bin\Debug\GameTicTac.exe.config
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\bin\Debug\GameTicTac.exe
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\bin\Debug\GameTicTac.pdb
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.csprojAssemblyReference.cache
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.Properties.Resources.resources
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.csproj.GenerateResource.cache
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.csproj.CoreCompileInputs.cache
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.exe
+C:\Users\grank\source\repos\GameTicTac\GameTicTac\obj\Debug\GameTicTac.pdb
