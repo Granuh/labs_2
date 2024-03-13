@@ -69,10 +69,15 @@ namespace GameTicTac
                 Cursor = Cursors.Default;
             }
         }
+
+        public void FillCell(Panel panel, int row, int column)
+        {
+            //todo сделать позже метод
+        }
         
         private void panelCell0_0_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 0, 0);
         }
 
         private void panelCell0_0_MouseEnter(object sender, EventArgs e)
@@ -87,7 +92,7 @@ namespace GameTicTac
 
         private void panelCell0_1_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 0, 1);
         }
 
         private void panelCell0_1_MouseEnter(object sender, EventArgs e)
@@ -102,7 +107,7 @@ namespace GameTicTac
 
         private void panelCell0_2_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 0, 2);
         }
 
         private void panelCell0_2_MouseEnter(object sender, EventArgs e)
@@ -117,7 +122,7 @@ namespace GameTicTac
 
         private void panelCell1_0_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 1, 0);
         }
 
         private void panelCell1_0_MouseEnter(object sender, EventArgs e)
@@ -132,7 +137,7 @@ namespace GameTicTac
 
         private void panelCell1_1_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 1, 1);
         }
 
         private void panelCell1_1_MouseEnter(object sender, EventArgs e)
@@ -147,7 +152,7 @@ namespace GameTicTac
 
         private void panelCell1_2_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 1, 2);
         }
 
         private void panelCell1_2_MouseEnter(object sender, EventArgs e)
@@ -162,7 +167,7 @@ namespace GameTicTac
 
         private void panelCell2_0_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 2, 0);
         }
 
         private void panelCell2_0_MouseEnter(object sender, EventArgs e)
@@ -177,7 +182,7 @@ namespace GameTicTac
 
         private void panelCell2_1_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 2, 1);
         }
 
         private void panelCell2_1_MouseEnter(object sender, EventArgs e)
@@ -192,7 +197,7 @@ namespace GameTicTac
 
         private void panelCell2_2_Click(object sender, EventArgs e)
         {
-
+            FillCell((Panel)sender, 2, 2);
         }
 
         private void panelCell2_2_MouseEnter(object sender, EventArgs e)
