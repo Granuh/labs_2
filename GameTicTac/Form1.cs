@@ -338,7 +338,7 @@ namespace GameTicTac
 
         private void labelPlayerVsPlayer_Click(object sender, EventArgs e)
         {
-            //todo
+            ResetGame();
         }
 
         private void labelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
@@ -348,7 +348,7 @@ namespace GameTicTac
 
         private void panelReset_Click(object sender, EventArgs e)
         {
-            //todo
+            ResetGame();
         }
 
         private void panelReset_MouseEnter(object sender, EventArgs e)
@@ -373,7 +373,7 @@ namespace GameTicTac
 
         private void panelNewGame_Click(object sender, EventArgs e)
         {
-            //todo
+            StartNewGame();
         }
 
         private void panelNewGame_MouseEnter(object sender, EventArgs e)
@@ -388,7 +388,7 @@ namespace GameTicTac
 
         private void labelNewGame_Click(object sender, EventArgs e)
         {
-            //todo
+            StartNewGame();
         }
 
         private void labelNewGame_MouseEnter(object sender, EventArgs e)
@@ -427,9 +427,9 @@ namespace GameTicTac
         {
             ShowMainMenu(false);
 
-            labelPlayer1Name.Text = "Игрок 1"; // todo engine.GetCurrentPlayer1Title();
-            labelPlayer2Name.Text = "Игрок 2"; // todo engine.GetCurrentPlayer2Title();
-            labelWhooseTurn.Text = "Ход игрока N"; // todo engine.GetWhooseTurnTitle();
+            labelPlayer1Name.Text = engine.GetCurrentPlayer1Title();
+            labelPlayer2Name.Text = engine.GetCurrentPlayer2Title();
+            labelWhooseTurn.Text = engine.GetWhooseTurnTitle();
 
             labelPlayer1Name.Top = labelNewGameTitle.Top;
             labelPlayer1Score.Top = labelPlayer1Name.Top;
@@ -483,6 +483,27 @@ namespace GameTicTac
 
             engine.SetPlayer1HumanTurn();
             labelWhooseTurn.Text = engine.GetWhooseTurnTitle();
+        }
+
+        private void ResetGame()
+        {
+            ClearGameField();
+            engine.StartGame(engine.GetCurrentMode());
+            labelPlayer1Score.Text = engine.GetPlayer1Score().ToString();
+            labelPlayer2Score.Text = engine.GetPlayer2Score().ToString();
+            UpdateControls();
+        }
+
+        private void StartNewGame()
+        {
+            ClearGameField();
+            engine.PrepareForNewGame();
+
+            labelPlayer1Score.Text = engine.GetPlayer1Score().ToString();
+            labelPlayer2Score.Text = engine.GetPlayer2Score().ToString();
+
+            ShowMainMenu(true);
+            SetPlayerLabelsAndScoreVisible(false);
         }
     }
 }
