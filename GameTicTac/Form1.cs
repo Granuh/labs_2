@@ -273,5 +273,55 @@ namespace GameTicTac
         {
             RegularButtonMouseOver(panelPlayerVsPlayer, labelPlayerVsPlayer);
         }
+
+        private void panelReset_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void panelReset_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelReset, labelReset);
+        }
+
+        private void panelReset_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelReset, labelReset);
+        }
+
+        private void labelReset_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void labelReset_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelReset, labelReset);
+        }
+
+        private void panelNewGame_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void panelNewGame_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelNewGame, labelNewGame);
+        }
+
+        private void panelNewGame_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelNewGame, labelNewGame);
+        }
+
+        private void labelNewGame_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void labelNewGame_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelNewGame, labelNewGame);
+        }
     }
 }
