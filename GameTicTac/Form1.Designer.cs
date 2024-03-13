@@ -258,6 +258,9 @@
             this.panelCloseButton.Name = "panelCloseButton";
             this.panelCloseButton.Size = new System.Drawing.Size(52, 42);
             this.panelCloseButton.TabIndex = 18;
+            this.panelCloseButton.Click += new System.EventHandler(this.panelCloseButton_Click);
+            this.panelCloseButton.MouseEnter += new System.EventHandler(this.panelCloseButton_MouseEnter);
+            this.panelCloseButton.MouseLeave += new System.EventHandler(this.panelCloseButton_MouseLeave);
             // 
             // labelClose
             // 
@@ -269,6 +272,8 @@
             this.labelClose.Size = new System.Drawing.Size(25, 24);
             this.labelClose.TabIndex = 17;
             this.labelClose.Text = "X";
+            this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
+            this.labelClose.MouseEnter += new System.EventHandler(this.labelClose_MouseEnter);
             // 
             // panelPlayerVsCpu
             // 
