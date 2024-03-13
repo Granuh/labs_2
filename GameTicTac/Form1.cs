@@ -209,5 +209,69 @@ namespace GameTicTac
         {
             CellMouseOut(sender);
         }
+
+        public void RegularButtonMouseOver(Panel panelButton, Label labelButtonText)
+        {
+            panelButton.BackColor = Color.Purple;
+            labelButtonText.ForeColor = Color.Yellow;
+            Cursor = Cursors.Hand;
+        }
+
+        public void RegularButtonMouseOut(Panel panelButton, Label labelButtonText)
+        {
+            panelButton.BackColor = Color.SlateBlue;
+            labelButtonText.ForeColor = Color.Cyan;
+            Cursor = Cursors.Default;
+        }
+
+        private void panelPlayerVsCpu_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void panelPlayerVsCpu_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelPlayerVsCpu, labelPlayerVsCpu);
+        }
+
+        private void panelPlayerVsCpu_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelPlayerVsCpu, labelPlayerVsCpu);
+        }
+
+        private void labelPlayerVsCpu_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void labelPlayerVsCpu_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelPlayerVsCpu, labelPlayerVsCpu);
+        }
+
+        private void panelPlayerVsPlayer_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void panelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelPlayerVsPlayer, labelPlayerVsPlayer);
+        }
+
+        private void panelPlayerVsPlayer_MouseLeave(object sender, EventArgs e)
+        {
+            RegularButtonMouseOut(panelPlayerVsPlayer, labelPlayerVsPlayer);
+        }
+
+        private void labelPlayerVsPlayer_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void labelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
+        {
+            RegularButtonMouseOver(panelPlayerVsPlayer, labelPlayerVsPlayer);
+        }
     }
 }
