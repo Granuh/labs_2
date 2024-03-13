@@ -50,8 +50,25 @@ namespace GameTicTac
         }
 
         // Panels
+        public void CellMouseOver(object sender)
+        {
+            if (sender is Panel)
+            {
+                Panel panelCell = (Panel)sender;
+                panelCell.BackColor = Color.Purple;
+                Cursor = Cursors.Hand;
+            }
+        }
 
-        
+        public void CellMouseOut(object sender)
+        {
+            if (sender is Panel)
+            {
+                Panel panelCell = (Panel)sender;
+                panelCell.BackColor = Color.Indigo;
+                Cursor = Cursors.Default;
+            }
+        }
         
         private void panelCell0_0_Click(object sender, EventArgs e)
         {
@@ -60,12 +77,12 @@ namespace GameTicTac
 
         private void panelCell0_0_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell0_0_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell0_1_Click(object sender, EventArgs e)
@@ -75,12 +92,12 @@ namespace GameTicTac
 
         private void panelCell0_1_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell0_1_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell0_2_Click(object sender, EventArgs e)
@@ -90,12 +107,12 @@ namespace GameTicTac
 
         private void panelCell0_2_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell0_2_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell1_0_Click(object sender, EventArgs e)
@@ -105,12 +122,12 @@ namespace GameTicTac
 
         private void panelCell1_0_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell1_0_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell1_1_Click(object sender, EventArgs e)
@@ -120,12 +137,12 @@ namespace GameTicTac
 
         private void panelCell1_1_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell1_1_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell1_2_Click(object sender, EventArgs e)
@@ -135,12 +152,12 @@ namespace GameTicTac
 
         private void panelCell1_2_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell1_2_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell2_0_Click(object sender, EventArgs e)
@@ -150,12 +167,12 @@ namespace GameTicTac
 
         private void panelCell2_0_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell2_0_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell2_1_Click(object sender, EventArgs e)
@@ -165,12 +182,12 @@ namespace GameTicTac
 
         private void panelCell2_1_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell2_1_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
 
         private void panelCell2_2_Click(object sender, EventArgs e)
@@ -180,12 +197,12 @@ namespace GameTicTac
 
         private void panelCell2_2_MouseEnter(object sender, EventArgs e)
         {
-
+            CellMouseOver(sender);
         }
 
         private void panelCell2_2_MouseLeave(object sender, EventArgs e)
         {
-
+            CellMouseOut(sender);
         }
     }
 }

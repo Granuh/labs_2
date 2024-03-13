@@ -31,5 +31,29 @@ namespace UnitTestProject1
 
             Assert.AreEqual(Color.Purple, buttonPanel.BackColor);
         }
+
+        [TestMethod]
+        public void TestCellMouseOver()
+        {
+            FormTicTacGame form = new FormTicTacGame();
+            Panel panelCell = new Panel();
+            Color expectedColor = panelCell.BackColor;
+
+            form.CellMouseOver(panelCell);
+
+            Assert.AreEqual(Color.Purple, panelCell.BackColor);
+        }
+
+        [TestMethod]
+        public void TestCellMouseOut()
+        {
+            FormTicTacGame form = new FormTicTacGame();
+            Panel panelCell = new Panel();
+            Color expectedColor = panelCell.BackColor;
+
+            form.CellMouseOut(panelCell);
+
+            Assert.AreEqual(Color.Indigo, panelCell.BackColor);
+        }
     }
 }
