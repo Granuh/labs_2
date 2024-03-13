@@ -12,6 +12,8 @@ namespace GameTicTac
 {
     public partial class FormTicTacGame : Form
     {
+        private GameEngine engine = new GameEngine();
+
         public FormTicTacGame()
         {
             InitializeComponent();

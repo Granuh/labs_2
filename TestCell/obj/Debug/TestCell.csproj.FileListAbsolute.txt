@@ -1,0 +1,2 @@
+C:\Users\grank\source\repos\GameTicTac\TestCell\obj\Debug\TestCell.csprojAssemblyReference.cache
+C:\Users\grank\source\repos\GameTicTac\TestCell\obj\Debug\TestCell.csproj.CoreCompileInputs.cache
