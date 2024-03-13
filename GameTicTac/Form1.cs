@@ -298,7 +298,7 @@ namespace GameTicTac
 
         private void panelPlayerVsCpu_Click(object sender, EventArgs e)
         {
-            //todo
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU);
         }
 
         private void panelPlayerVsCpu_MouseEnter(object sender, EventArgs e)
@@ -313,7 +313,7 @@ namespace GameTicTac
 
         private void labelPlayerVsCpu_Click(object sender, EventArgs e)
         {
-            //todo
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsCPU);
         }
 
         private void labelPlayerVsCpu_MouseEnter(object sender, EventArgs e)
@@ -323,7 +323,7 @@ namespace GameTicTac
 
         private void panelPlayerVsPlayer_Click(object sender, EventArgs e)
         {
-            //todo
+            StartNewGameInSelectedMode(GameEngine.GameMode.PlayerVsPlayer);
         }
 
         private void panelPlayerVsPlayer_MouseEnter(object sender, EventArgs e)
@@ -363,7 +363,7 @@ namespace GameTicTac
 
         private void labelReset_Click(object sender, EventArgs e)
         {
-            //todo
+            ResetGame();
         }
 
         private void labelReset_MouseEnter(object sender, EventArgs e)
@@ -504,6 +504,12 @@ namespace GameTicTac
 
             ShowMainMenu(true);
             SetPlayerLabelsAndScoreVisible(false);
+        }
+
+        private void StartNewGameInSelectedMode(GameEngine.GameMode selectedMode)
+        {
+            engine.StartGame(selectedMode);
+            UpdateControls();
         }
     }
 }
