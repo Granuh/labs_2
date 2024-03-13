@@ -393,6 +393,7 @@
             this.Name = "FormTicTacGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicTacGame";
+            this.Load += new System.EventHandler(this.FormTicTacGame_Load);
             this.panelReset.ResumeLayout(false);
             this.panelReset.PerformLayout();
             this.panelNewGame.ResumeLayout(false);

@@ -323,5 +323,56 @@ namespace GameTicTac
         {
             RegularButtonMouseOver(panelNewGame, labelNewGame);
         }
+
+        public void SetPlayerLabelsAndScoreVisible(bool visible)
+        {
+            labelPlayer1Name.Visible = visible;
+            labelPlayer1Score.Visible = visible;
+            labelPlayer2Name.Visible = visible;
+            labelPlayer2Score.Visible = visible;
+            labelNowTurnls.Visible = visible;
+            labelWhooseTurn.Visible = visible;
+
+            panelNewGame.Visible = visible;
+            panelReset.Visible = visible;
+        }
+
+        public void FormTicTacGame_Load(object sender, EventArgs e)
+        {
+            labelPlayer1Name.Text = "?";
+            labelPlayer2Name.Text = "?";
+            SetPlayerLabelsAndScoreVisible(false);
+        }
+
+        public void ShowMainMenu(bool show)
+        {
+            labelNewGameTitle.Visible = show;
+            panelPlayerVsCpu.Visible = show;
+            panelPlayerVsPlayer.Visible = show;
+        }
+
+        public void UpdateControls()
+        {
+            ShowMainMenu(false);
+
+            labelPlayer1Name.Text = "Игрок 1"; // todo engine.GetCurrentPlayer1Title();
+            labelPlayer2Name.Text = "Игрок 2"; // todo engine.GetCurrentPlayer2Title();
+            labelWhooseTurn.Text = "Ход игрока N"; // todo engine.GetWhooseTurnTitle();
+
+            labelPlayer1Name.Top = labelNewGameTitle.Top;
+            labelPlayer1Score.Top = labelPlayer1Name.Top;
+            labelPlayer2Name.Top = labelPlayer1Name.Top + 37;
+            labelPlayer2Score.Top = labelPlayer2Name.Top;
+            labelNowTurnls.Top = labelPlayer2Name.Top + 37;
+            labelWhooseTurn.Top = labelNowTurnls.Top;
+
+            panelNewGame.Left = labelNowTurnls.Left + 30;
+            panelNewGame.Top = labelNowTurnls.Bottom + 15;
+
+            panelReset.Left = panelNewGame.Right + 15;
+            panelReset.Top = panelNewGame.Top;
+
+            SetPlayerLabelsAndScoreVisible(true);
+        }
     }
 }
