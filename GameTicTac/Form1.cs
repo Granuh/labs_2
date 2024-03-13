@@ -74,7 +74,77 @@ namespace GameTicTac
 
         public void FillCell(Panel panel, int row, int column)
         {
-            //todo сделать позже метод
+            if (!engine.IsGameStarted())
+            {
+                // если игра не началась, не рисовать ничего на игровом поле и просто вернуться
+                return;
+            }
+
+            Label markLabel = new Label();
+            markLabel.Font = new Font(FontFamily.GenericMonospace, 72, FontStyle.Bold);
+            markLabel.AutoSize = true;
+            markLabel.Text = engine.GetCurrentMarkLabelText();
+            markLabel.ForeColor = engine.GetCurrentMarkLabelColor();
+
+            labelWhooseTurn.Text = engine.GetWhooseNextTurnTitle();
+
+            engine.MakeTurnAndFillGameFieldCell(row, column);
+
+            panel.Controls.Add(markLabel);
+
+            if (engine.IsWin())
+            {
+                // Движок вернул результат, что произошла победа одного из игроков
+                MessageBox.Show("Победа! Выиграл " + engine.GetWinner(), "Крестики-Нолики", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                labelPlayer1Score.Text = engine.GetPlayer1Score().ToString();
+                labelPlayer2Score.Text = engine.GetPlayer2Score().ToString();
+                ClearGameField();
+            }
+            else if (engine.IsDraw())
+            {
+                // Движок вернул результат, что произошла ничья
+                MessageBox.Show("Ничья!", "Крестики-Нолики", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearGameField();
+            }
+            else
+            {
+                // Ещё остались свободные клетки на поле. Если ход компьютера - вызываем движок для определения клетки, которую
+                // выберет комьютер для хода
+                if (engine.GetCurrentTurn() == GameEngine.WhooseTurn.Player2CPU)
+                {
+                    Cell cellChosenByCpu = engine.MakeComputerTurnAndGetCell();
+                    if (!cellChosenByCpu.IsErrorCell())
+                    {
+                        Panel panelCell = GetPanelCellControlByCell(cellChosenByCpu);
+                        if (panelCell != null)
+                        {
+                            FillCell(panelCell, cellChosenByCpu.Row, cellChosenByCpu.Column);
+                        }
+                        else
+                        {
+                            // что-то пошло не так, мы не смогли найти верный элемент Panel по клетке, выбранной компьютером
+                            // покажем ошибку
+                            MessageBox.Show(
+                                "Произошла ошибка: выбранная компьютером клетка не должна быть равна null!",
+                                "Крестики-Нолики",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error
+                            );
+                        }
+                    }
+                    else
+                    {
+                        // что-то пошло не так, движок вернул спецклетку, хотя такого быть не должно.
+                        // покажем ошибку
+                        MessageBox.Show(
+                            "Произошла ошибка: компьютер не смог выбрать клетку для хода!",
+                            "Крестики-Нолики",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
+            }
         }
         
         private void panelCell0_0_Click(object sender, EventArgs e)
@@ -375,6 +445,44 @@ namespace GameTicTac
             panelReset.Top = panelNewGame.Top;
 
             SetPlayerLabelsAndScoreVisible(true);
+        }
+
+        private Panel GetPanelCellControlByCell(Cell cell)
+        {
+            if (cell == null || !cell.IsValidGameFieldCell())
+            {
+                return null;
+            }
+            string panelCtrlName = "panelCell" + cell.Row + "_" + cell.Column;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl.Name.Equals(panelCtrlName) && ctrl is Panel)
+                {
+                    return (Panel)ctrl;
+                }
+            }
+
+            return null;
+        }
+
+        private void ClearGameField()
+        {
+            engine.ClearGameField();
+
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    Panel panelCell = GetPanelCellControlByCell(Cell.From(row, col));
+                    if (panelCell != null)
+                    {
+                        panelCell.Controls.Clear();
+                    }
+                }
+            }
+
+            engine.SetPlayer1HumanTurn();
+            labelWhooseTurn.Text = engine.GetWhooseTurnTitle();
         }
     }
 }
